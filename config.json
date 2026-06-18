@@ -30,13 +30,29 @@
         "wsSettings": {
           "path": "/ws-path"
         }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
       }
     }
   ],
   "outbounds": [
     {
       "protocol": "freedom",
-      "tag": "direct"
+      "tag": "direct",
+      "settings": {
+        "domainStrategy": "AsIs"
+      }
     }
-  ]
+  ],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "ip": ["0.0.0.0/0"],
+        "outboundTag": "direct"
+      }
+    ]
+  }
 }
