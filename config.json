@@ -19,7 +19,7 @@
         "network": "ws",
         "security": "tls",
         "tlsSettings": {
-          "serverName": "www.jio.com",
+          "serverName": "d2fyr8dozors22.cloudfront.net",
           "certificates": [
             {
               "certificateFile": "/etc/xray/certs/fullchain.pem",
