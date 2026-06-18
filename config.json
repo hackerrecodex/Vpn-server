@@ -1,0 +1,42 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port": 10000,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "7bd2038d-dc23-4726-8bc9-01b99b2f8bad",
+            "flow": ""
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "www.jio.com",
+          "certificates": [
+            {
+              "certificateFile": "/etc/xray/certs/fullchain.pem",
+              "keyFile": "/etc/xray/certs/privkey.pem"
+            }
+          ]
+        },
+        "wsSettings": {
+          "path": "/ws-path"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    }
+  ]
+}
